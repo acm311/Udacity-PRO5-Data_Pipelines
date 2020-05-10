@@ -67,3 +67,8 @@ For example one test could be a SQL statement that checks if certain column cont
 In case that the python apache-airflow gives to you an error related to PEP 517, use the following instruction:
 
      pip install --no-use-pep517 apache-airflow
+     
+###Execution
+1. On AWS, create the Redshift database.
+2. Use create_tables.sql
+3. Execute sparkify_dag.py     
