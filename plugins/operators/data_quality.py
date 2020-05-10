@@ -19,6 +19,14 @@ class DataQualityOperator(BaseOperator):
         self.tables_to_check = tables_to_check
 
     def execute(self, context):
+        """ Execute the operator in order to check the quality of the DAG's result
+
+        Arguments:
+            context
+        Returns:
+            None
+        """
+
         #self.log.info('DataQualityOperator not implemented yet')
         redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)
         for table in self.tables_to_check:

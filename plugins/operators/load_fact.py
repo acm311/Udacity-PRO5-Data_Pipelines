@@ -29,6 +29,14 @@ class LoadFactOperator(BaseOperator):
         self.delete_info = delete_info
 
     def execute(self, context):
+        """ Execute the operator in order to load a Fact table
+
+        Arguments:
+            context
+        Returns:
+            None
+        """
+
         #self.log.info('LoadFactOperator not implemented yet')
         redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)
         if self.delete_info:

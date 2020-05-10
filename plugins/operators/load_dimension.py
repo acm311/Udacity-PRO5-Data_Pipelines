@@ -27,6 +27,14 @@ class LoadDimensionOperator(BaseOperator):
         self.delete_info = delete_info
 
     def execute(self, context):
+        """ Execute the operator in order to load a dimension table
+
+        Arguments:
+            context
+        Returns:
+            None
+        """
+
         #self.log.info('LoadDimensionOperator not implemented yet')
         redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)
         if self.delete_info:

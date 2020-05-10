@@ -1,4 +1,6 @@
 class SqlQueries:
+
+    # query used in order to populate the songplay table
     songplay_table_insert = ("""
         INSERT INTO {} (
             start_time,
@@ -29,6 +31,7 @@ class SqlQueries:
                 AND events.length = songs.duration
     """)
 
+    # query used in order to populate the user table
     user_table_insert = ("""
         INSERT INTO {} (
             user_id,
@@ -42,6 +45,7 @@ class SqlQueries:
         WHERE page='NextSong'
     """)
 
+    # query used in order to populate the song table
     song_table_insert = ("""
         INSERT INTO {} (
             song_id,
@@ -54,6 +58,7 @@ class SqlQueries:
         FROM staging_songs
     """)
 
+    # query used in order to populate the artist table
     artist_table_insert = ("""
         INSERT INTO {} (
             artist_id,
@@ -66,6 +71,7 @@ class SqlQueries:
         FROM staging_songs
     """)
 
+    # query used in order to populate the time table
     time_table_insert = ("""
         INSERT INTO {} (
             start_time,

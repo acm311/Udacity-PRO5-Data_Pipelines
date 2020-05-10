@@ -36,6 +36,14 @@ class StageToRedshiftOperator(BaseOperator):
         self.region = region
 
     def execute(self, context):
+        """ Execute the operator in order to bring data from S3 to Redshift
+
+        Arguments:
+            context
+        Returns:
+            None
+        """
+
         #self.log.info('StageToRedshiftOperator not implemented yet')
         aws = AwsHook(self.aws_credentials_id)
         credentials = aws.get_credentials()
