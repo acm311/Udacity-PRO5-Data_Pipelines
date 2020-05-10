@@ -45,7 +45,6 @@ class StageToRedshiftOperator(BaseOperator):
         redshift.run(f"DELETE FROM {self.table}")
 
         self.log.info("Copying data from S3 to Redshift")
-        rendered_key = self.s3_key.format(**context)
         formatted_sql = StageToRedshiftOperator.copy_sql.format(
             self.table,
             self.s3_bucket_path,
